@@ -1,10 +1,17 @@
-import { useState } from "react";
 import { StyledInputBill, InputWrapper, Input } from "./styled";
 import Title from "../title";
 import { ReactComponent as DollarIcon } from "./images/DollarIcon.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { insertBill, selectBillAmount } from "../../calculatorSlice";
 
 const InputBill = () => {
-  const [billAmount, setBillAmount] = useState("");
+  const dispatch = useDispatch();
+
+  const billAmount = useSelector(selectBillAmount);
+
+  const onInputChange = ({ target }) => {
+    dispatch(insertBill(target.value));
+  };
 
   return (
     <StyledInputBill>
@@ -15,7 +22,7 @@ const InputBill = () => {
           type="number"
           dir="rtl"
           value={billAmount}
-          onChange={({ target }) => setBillAmount(target.value)}
+          onChange={onInputChange}
         ></Input>
       </InputWrapper>
     </StyledInputBill>

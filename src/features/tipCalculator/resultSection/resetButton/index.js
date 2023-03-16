@@ -1,7 +1,11 @@
 import { Button } from "./styled";
+import { useDispatch } from "react-redux";
+import { resetData } from "../../calculatorSlice";
 
 const ResetButton = () => {
-  return <Button>RESET</Button>;
+  const dispatch = useDispatch();
+
+  return <Button onClick={() => dispatch(resetData())}>RESET</Button>;
 };
 
 export default ResetButton;
