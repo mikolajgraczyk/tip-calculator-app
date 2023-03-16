@@ -1,7 +1,11 @@
-import { StyledTipCalculator, ControlsSection } from "./styled";
-import InputBill from "./inputBill";
-import SelectTip from "./selectTip";
-import InputPeople from "./inputPeople";
+import { StyledTipCalculator } from "./styled";
+import { ControlsSection } from "./controlsSection";
+import { ResultSection } from "./resultSection";
+import InputBill from "./controlsSection/inputBill";
+import SelectTip from "./controlsSection/selectTip";
+import InputPeople from "./controlsSection/inputPeople";
+import ResultAmount from "./resultSection/resultAmount";
+import ResetButton from "./resultSection/resetButton";
 
 const TipCalculator = () => {
   return (
@@ -11,6 +15,10 @@ const TipCalculator = () => {
         <SelectTip />
         <InputPeople />
       </ControlsSection>
+      <ResultSection>
+        <ResultAmount />
+        <ResetButton />
+      </ResultSection>
     </StyledTipCalculator>
   );
 };

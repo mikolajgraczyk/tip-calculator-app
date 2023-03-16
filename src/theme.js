@@ -14,6 +14,6 @@ export const theme = {
         waterLeaf: "#9FE8DF",
     },
     breakpoint: {
-        mobile: 470,
+        mobile: 767,
     },
 };
