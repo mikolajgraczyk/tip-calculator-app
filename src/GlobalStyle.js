@@ -19,7 +19,8 @@ export const GlobalStyle = createGlobalStyle`
         justify-content: center;
 
         @media(max-width: ${({theme}) => theme.breakpoint.mobile}px){
-            align-items: flex-end;
+           display: block;
+            /* align-items: flex-end; */
         }
     }
 `;

@@ -13,5 +13,8 @@ export const StyledTipCalculator = styled.div`
     gap: 32px;
     padding: 32px 24px 32px 24px;
     border-radius: 25px 25px 0 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
 `;
