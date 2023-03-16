@@ -33,8 +33,12 @@ export const selectBillAmount = (state) => selectCalculatorState(state).billAmou
 export const selectPeopleAmount = (state) => selectCalculatorState(state).peopleAmount;
 export const selectSelectedTip = (state) => selectCalculatorState(state).tipSelected;
 
-export const selectCalculateTipAmount = (state) => {
+export const selectCalculatedTipAmount = (state) => {
     return selectSelectedTip(state)/100 * selectBillAmount(state);
+};
+
+export const selectTipAmountPerPerson = (state) => {
+    return selectCalculatedTipAmount(state)/selectPeopleAmount(state);
 };
 
 export default calculatorSlice.reducer;

@@ -1,20 +1,21 @@
 import { StyledResultAmount, Amount } from "./styled";
 import ResultInfo from "./resultInfo";
 import { useSelector } from "react-redux";
-import { selectCalculateTipAmount } from "../../calculatorSlice";
+import { selectCalculatedTipAmount, selectTipAmountPerPerson } from "../../calculatorSlice";
 
 const ResultAmount = () => {
-  const calculatedTipAmount = useSelector(selectCalculateTipAmount);
+  const calculatedTip = useSelector(selectCalculatedTipAmount);
+  const calculatedTipPerPerson = useSelector(selectTipAmountPerPerson);
 
   return (
     <>
       <StyledResultAmount>
         <ResultInfo title="Tip Amount" />
-        <Amount>${calculatedTipAmount.toFixed(2)}</Amount>
+        <Amount>${calculatedTip.toFixed(2)}</Amount>
       </StyledResultAmount>
       <StyledResultAmount>
         <ResultInfo title="Total" />
-        <Amount>$0.00</Amount>
+        <Amount>${calculatedTipPerPerson ? calculatedTipPerPerson.toFixed(2) : "0.00"}</Amount>
       </StyledResultAmount>
     </>
   );
