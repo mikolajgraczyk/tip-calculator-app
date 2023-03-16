@@ -1,11 +1,13 @@
 import { StyledSelectTip, TipsSection, TipButton, TipInput } from "./styled";
 import Title from "../title";
 import { useDispatch, useSelector } from "react-redux";
-import { selectTip, selectSelectedTip } from "../../calculatorSlice";
+import { selectTip, selectSelectedTip, selectIsDataInsered } from "../../calculatorSlice";
 
 const SelectTip = () => {
   const dispatch = useDispatch();
+
   const selectedTip = useSelector(selectSelectedTip);
+  const isDataInsered = useSelector(selectIsDataInsered);
 
   const setTip = (value) => {
     dispatch(selectTip(value));
@@ -38,6 +40,7 @@ const SelectTip = () => {
           type="number"
           placeholder="Custom"
           dir="rtl"
+          value={isDataInsered ? "" : null}
           onChange={({ target }) => setTip(target.value)}
         ></TipInput>
       </TipsSection>
