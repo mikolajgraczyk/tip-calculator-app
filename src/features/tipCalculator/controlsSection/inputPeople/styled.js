@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledInputPeople = styled.div`
   display: flex;
@@ -13,6 +13,24 @@ export const InputWrapper = styled.div`
   padding: 0 15px 0 17px;
   border-radius: 5px;
   border: 2px ${({ theme }) => theme.color.whiteSqueeze} solid;
+
+  ${({ amount }) =>
+    amount > 0 &&
+    css`
+      border: 2px ${({ theme }) => theme.color.java} solid;
+    `}
+
+  ${({ amount }) =>
+    amount < 0 &&
+    css`
+      border: 2px ${({ theme }) => theme.color.terracotta} solid;
+    `}
+
+    ${({ amount }) =>
+     amount  === "0" &&
+    css`
+      border: 2px ${({ theme }) => theme.color.terracotta} solid;
+    `}
 `;
 
 export const Input = styled.input`

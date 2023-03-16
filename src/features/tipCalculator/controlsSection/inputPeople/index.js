@@ -16,7 +16,7 @@ const InputPeople = () => {
   return (
     <StyledInputPeople>
       <Title title="Number of People" />
-      <InputWrapper>
+      <InputWrapper amount={peopleAmount}>
         <PersonIcon />
         <Input
           type="number"
