@@ -13,6 +13,7 @@ export const Button = styled.button`
 
   ${({disabled}) => disabled && css`
     background-color: ${({theme}) => theme.color.atoll};
+    color: #00474b59;
   `}
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {

@@ -26,8 +26,11 @@ const InputPeople = () => {
         <Input
           type="number"
           dir="rtl"
+          lang="ar"
+          step="1" 
           value={peopleAmount}
           onChange={onInputChange}
+          placeholder="0"
         ></Input>
       </InputWrapper>
     </StyledInputPeople>

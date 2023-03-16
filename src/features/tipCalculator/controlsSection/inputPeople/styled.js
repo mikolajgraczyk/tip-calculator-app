@@ -42,6 +42,10 @@ export const Input = styled.input`
   padding: 4px 0 4px 0;
   width: 100%;
 
+  &::placeholder{
+    color: #00474b59;
+  }
+
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;

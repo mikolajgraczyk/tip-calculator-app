@@ -21,8 +21,10 @@ const InputBill = () => {
         <Input
           type="number"
           dir="rtl"
+          lang="ar"
           value={billAmount}
           onChange={onInputChange}
+          placeholder="0"
         ></Input>
       </InputWrapper>
     </StyledInputBill>
