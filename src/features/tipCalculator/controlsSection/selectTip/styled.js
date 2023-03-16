@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-const bpMobile = ({theme}) => theme.breakpoint.mobile;
+const bpMobile = ({ theme }) => theme.breakpoint.mobile;
 
 export const StyledSelectTip = styled.div`
   display: flex;
@@ -13,10 +13,10 @@ export const TipsSection = styled.div`
   gap: 14px;
   grid-template-columns: repeat(3, 1fr);
 
-  @media(max-width: ${bpMobile}px){
+  @media (max-width: ${bpMobile}px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-  };
+  } ;
 `;
 
 export const TipButton = styled.button`
@@ -28,6 +28,12 @@ export const TipButton = styled.button`
   font-family: "Space Mono";
   background: ${({ theme }) => theme.color.sherpaBlue};
   color: ${({ theme }) => theme.color.white};
+
+  ${({ selected }) =>
+    selected &&
+    css`
+      background: ${({ theme }) => theme.color.java};
+    `}
 
   &:hover {
     background: ${({ theme }) => theme.color.java};
@@ -63,7 +69,7 @@ export const TipInput = styled.input`
     outline: none;
   }
 
-  &::placeholder{
-    color: ${({theme}) => theme.color.prettyShark};
+  &::placeholder {
+    color: ${({ theme }) => theme.color.prettyShark};
   }
 `;
