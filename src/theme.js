@@ -12,6 +12,7 @@ export const theme = {
         william: "#3D6666",
         terracotta: "#E17052",
         waterLeaf: "#9FE8DF",
+        atoll: "#0D686D",
     },
     breakpoint: {
         mobile: 767,

@@ -39,9 +39,9 @@ export const selectSelectedTip = (state) =>
 
 export const selectCalculatedTipAmount = (state) => {
   if (selectBillAmount(state) < 0) {
-    return 0.00;
+    return 0.0;
   }
-  return (selectSelectedTip(state) / 100) * selectBillAmount(state);;
+  return (selectSelectedTip(state) / 100) * selectBillAmount(state);
 };
 
 export const selectTipAmountPerPerson = (state) => {
@@ -56,5 +56,9 @@ export const selectTipAmountPerPerson = (state) => {
       return 0.0;
   }
 };
+
+export const selectIsDataInsered = (state) => {
+    return Object.values(selectCalculatorState(state)).every((value) => value === "");
+  };
 
 export default calculatorSlice.reducer;
