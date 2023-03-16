@@ -26,12 +26,11 @@ const SelectTip = () => {
 
   const onInputChange = ({ target }) => {
     dispatch(setCustomTip(target.value));
-    dispatch(selectTip(target.value));
   };
 
   return (
     <StyledSelectTip>
-      <Title title="Select Tip %" />
+      <Title title="Select Tip %" amount={customTip}/>
       <TipsSection>
         <TipButton selected={checkIfSelected(5)} onClick={() => setTip(5)}>
           5%

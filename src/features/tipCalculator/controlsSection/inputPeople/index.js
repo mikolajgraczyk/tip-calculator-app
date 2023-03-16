@@ -1,4 +1,9 @@
-import { StyledInputPeople, InputWrapper, Input } from "./styled";
+import {
+  StyledInputPeople,
+  InputWrapper,
+  Input,
+  IncorrectNumberInfo,
+} from "./styled";
 import Title from "../title";
 import { ReactComponent as PersonIcon } from "./images/PersonIcon.svg";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,7 +20,7 @@ const InputPeople = () => {
 
   return (
     <StyledInputPeople>
-      <Title title="Number of People" />
+      <Title title="Number of People" amount={peopleAmount} />
       <InputWrapper amount={peopleAmount}>
         <PersonIcon />
         <Input

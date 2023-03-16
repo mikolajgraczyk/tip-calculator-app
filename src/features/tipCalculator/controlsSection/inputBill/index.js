@@ -15,7 +15,7 @@ const InputBill = () => {
 
   return (
     <StyledInputBill>
-      <Title title="Bill" />
+      <Title title="Bill" amount={billAmount}/>
       <InputWrapper amount={billAmount}>
         <DollarIcon />
         <Input

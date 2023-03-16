@@ -20,6 +20,7 @@ const calculatorSlice = createSlice({
     },
     setCustomTip(state, { payload }) {
         state.customTip = payload;
+        state.tipSelected = state.customTip;
     },
     clearCustomTip(state){
         state.customTip = "";

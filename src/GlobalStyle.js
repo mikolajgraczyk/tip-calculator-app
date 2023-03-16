@@ -23,7 +23,8 @@ export const GlobalStyle = createGlobalStyle`
             align-items: flex-end;
         }
 
-        @media(max-height: 790px){
+        @media(max-height: 790px) and (max-width: ${({ theme }) =>
+          theme.breakpoint.mobile}px) {
             height:100%;
         }
     }
