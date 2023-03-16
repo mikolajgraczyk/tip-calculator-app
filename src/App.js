@@ -1,8 +1,8 @@
-
+import TipCalculator from "./features/TipCalculator";
 
 function App() {
   return (
-    <></>
+    <TipCalculator/>
   );
 }
 
