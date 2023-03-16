@@ -11,16 +11,20 @@ export const GlobalStyle = createGlobalStyle`
 
     body{
         font-family: 'Space Mono';
-        background: ${({theme}) => theme.color.jaggedIce};
+        background: ${({ theme }) => theme.color.jaggedIce};
         display: flex;
         margin: 0;
         height: 100vh;
         align-items: center;
         justify-content: center;
 
-        @media(max-width: ${({theme}) => theme.breakpoint.mobile}px){
-           display: block;
-            /* align-items: flex-end; */
+        @media(max-width: ${({ theme }) => theme.breakpoint.mobile}px){
+            display: flex;
+            align-items: flex-end;
+        }
+
+        @media(max-height: 790px){
+            height:100%;
         }
     }
 `;

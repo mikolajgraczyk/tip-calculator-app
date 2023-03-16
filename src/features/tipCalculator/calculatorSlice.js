@@ -6,6 +6,7 @@ const calculatorSlice = createSlice({
     billAmount: "",
     tipSelected: "",
     peopleAmount: "",
+    customTip: "",
   },
   reducers: {
     insertBill(state, { payload }) {
@@ -17,16 +18,29 @@ const calculatorSlice = createSlice({
     insertPeopleAmount(state, { payload }) {
       state.peopleAmount = payload;
     },
+    setCustomTip(state, { payload }) {
+        state.customTip = payload;
+    },
+    clearCustomTip(state){
+        state.customTip = "";
+    },
     resetData(state) {
       state.billAmount = "";
       state.tipSelected = "";
       state.peopleAmount = "";
+      state.customTip = "";
     },
   },
 });
 
-export const { insertBill, selectTip, insertPeopleAmount, resetData } =
-  calculatorSlice.actions;
+export const {
+  insertBill,
+  selectTip,
+  insertPeopleAmount,
+  setCustomTip,
+  resetData,
+  clearCustomTip,
+} = calculatorSlice.actions;
 
 export const selectCalculatorState = (state) => state.calculator;
 
@@ -34,8 +48,14 @@ export const selectBillAmount = (state) =>
   selectCalculatorState(state).billAmount;
 export const selectPeopleAmount = (state) =>
   selectCalculatorState(state).peopleAmount;
-export const selectSelectedTip = (state) =>
-  selectCalculatorState(state).tipSelected;
+export const selectSelectedTip = (state) => {
+  if (selectCalculatorState(state).tipSelected < 0) {
+    return 0;
+  }
+  return selectCalculatorState(state).tipSelected;
+};
+export const selectCustomTip = (state) =>
+  selectCalculatorState(state).customTip;
 
 export const selectCalculatedTipAmount = (state) => {
   if (selectBillAmount(state) < 0) {
@@ -58,7 +78,9 @@ export const selectTipAmountPerPerson = (state) => {
 };
 
 export const selectIsDataInsered = (state) => {
-    return Object.values(selectCalculatorState(state)).every((value) => value === "");
-  };
+  return Object.values(selectCalculatorState(state)).every(
+    (value) => value === ""
+  );
+};
 
 export default calculatorSlice.reducer;

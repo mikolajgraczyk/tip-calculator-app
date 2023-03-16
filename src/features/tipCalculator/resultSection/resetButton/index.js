@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Button } from "./styled";
 import { useDispatch, useSelector } from "react-redux";
 import { resetData, selectIsDataInsered } from "../../calculatorSlice";

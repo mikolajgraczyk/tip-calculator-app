@@ -47,14 +47,32 @@ export const TipButton = styled.button`
 `;
 
 export const TipInput = styled.input`
-  padding: 6px 13px 6px 13px;
+  padding: 4px 11px 4px 11px;
   width: 100%;
-  border: none;
+  border: 2px ${({ theme }) => theme.color.whiteSqueeze} solid;
   border-radius: 5px;
   font-size: 24px;
   font-family: "Space Mono";
   background: ${({ theme }) => theme.color.whiteSqueeze};
   color: ${({ theme }) => theme.color.sherpaBlue};
+
+  ${({ amount }) =>
+    amount > 0 &&
+    css`
+      border: 2px ${({ theme }) => theme.color.java} solid;
+    `}
+
+  ${({ amount }) =>
+    amount < 0 &&
+    css`
+      border: 2px ${({ theme }) => theme.color.terracotta} solid;
+    `}
+
+    ${({ amount }) =>
+    amount === "0" &&
+    css`
+      border: 2px ${({ theme }) => theme.color.terracotta} solid;
+    `}
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
