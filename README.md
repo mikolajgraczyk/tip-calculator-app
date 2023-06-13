@@ -1,7 +1,7 @@
 # tip-calculator-app
 
 ## Description
-Another simple project created to practice programming skills and upgrade my portfolio. This time i decided to create a calculator app where you can calculate tip amount based on the bill price and divide it among any amount of people. I tried to polish every detail. Design comes from [Frontend Mentor](https://www.frontendmentor.io/challenges).
+Another simple project created to practice programming skills and upgrade my portfolio. This time i decided to create a calculator app where you can calculate tip amount based on the bill price and divide it among any amount of people. I tried to polish every detail. Graphic design comes from [Frontend Mentor](https://www.frontendmentor.io/challenges).
 
 ## Demo
 https://mikolajgraczyk.github.io/tip-calculator-app/
